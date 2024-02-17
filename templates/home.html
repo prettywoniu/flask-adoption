@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+  {% block title %} All Pets {% endblock %}
+{% block content %}
+  <h1>Pets</h1>
+  <ul>
+    {% for pet in pets %}
+      {% if pet.available %}
+        <li><a href="/{{pet.id}}">{{pet.name}}</a> is <b>Available</b></li>
+      {% else %}
+        <li>{{pet.name}} is Not Available</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <a href="/add" class="button">Add pet</a>
+
+{% endblock %}
